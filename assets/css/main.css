@@ -2670,10 +2670,10 @@ input, select, textarea {
 			width: 48%;
 		}
 
-			.features article .image img {
+			/* .features article .image img {
 				display: block;
 				width: 100%;
-			}
+			} */
 
 		.features article .inner {
 			display: inline-block;
