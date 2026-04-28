@@ -3319,15 +3319,15 @@ input, select, textarea {
 /* Section alignment overrides */
 
 	:root {
-		--accent-primary: #2f6fa3;
-		--accent-primary-strong: #1f547f;
-		--accent-primary-soft: #e9f1f8;
-		--accent-navy: #17314f;
-		--accent-slate: #5f7288;
+		--accent-primary: #3f79ad;
+		--accent-primary-strong: #2f618e;
+		--accent-primary-soft: #eef4fa;
+		--accent-navy: #20364f;
+		--accent-slate: #607284;
 		--surface-card: #ffffff;
-		--surface-muted: #f4f8fc;
-		--border-soft: #dbe6f1;
-		--shadow-soft: 0 12px 32px rgba(20, 43, 73, 0.08);
+		--surface-muted: #f6f9fc;
+		--border-soft: #dde6ef;
+		--shadow-soft: 0 4px 16px rgba(20, 43, 73, 0.05);
 	}
 
 	a {
@@ -3342,9 +3342,9 @@ input, select, textarea {
 		display: flex;
 		align-items: center;
 		gap: 2.5em;
-		background: linear-gradient(180deg, var(--surface-card) 0%, #fbfdff 100%);
+		background: var(--surface-card);
 		border: 1px solid var(--border-soft);
-		border-radius: 18px;
+		border-radius: 12px;
 		box-shadow: var(--shadow-soft);
 		padding: 2.25em;
 	}
@@ -3382,20 +3382,17 @@ input, select, textarea {
 	}
 
 	#one {
-		background:
-			radial-gradient(circle at top right, rgba(47, 111, 163, 0.12), transparent 32rem),
-			linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+		background: #ffffff;
 	}
 
 	#one .image.main {
-		height: 21.5em;
+		height: 18.5em;
 		overflow: hidden;
 		position: relative;
 	}
 
 	#one .image.main:before {
-		background:
-			linear-gradient(120deg, rgba(18, 41, 67, 0.78) 0%, rgba(23, 49, 79, 0.52) 38%, rgba(47, 111, 163, 0.18) 100%);
+		background: linear-gradient(90deg, rgba(22, 40, 61, 0.34) 0%, rgba(22, 40, 61, 0.08) 55%, rgba(22, 40, 61, 0.02) 100%);
 		content: "";
 		inset: 0;
 		position: absolute;
@@ -3403,7 +3400,7 @@ input, select, textarea {
 	}
 
 	#one .image.main:after {
-		background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.12) 100%);
+		background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.06) 100%);
 		content: "";
 		inset: 0;
 		position: absolute;
@@ -3411,8 +3408,8 @@ input, select, textarea {
 	}
 
 	#one .image.main img {
-		filter: saturate(0.7) contrast(1.05) brightness(0.72);
-		transform: scale(1.03);
+		filter: saturate(0.88) contrast(1.02) brightness(0.9);
+		transform: scale(1.01);
 	}
 
 	#one .container {
@@ -3420,7 +3417,7 @@ input, select, textarea {
 	}
 
 	#one .major h2 {
-		font-size: 2.6em;
+		font-size: 2.4em;
 		letter-spacing: -0.02em;
 	}
 
@@ -3442,11 +3439,11 @@ input, select, textarea {
 	}
 
 	.hero-highlights li {
-		background: linear-gradient(180deg, #ffffff 0%, #f8fbfe 100%);
-		border: 1px solid var(--border-soft);
-		border-radius: 14px;
-		box-shadow: 0 8px 24px rgba(20, 43, 73, 0.06);
-		padding: 1em 1em 1em 3.75em;
+		background: transparent;
+		border: 0;
+		border-radius: 0;
+		box-shadow: none;
+		padding: 0.2em 0 0.2em 3.75em;
 	}
 
 	.cv-note {
@@ -3465,7 +3462,7 @@ input, select, textarea {
 
 	#main h3 {
 		color: var(--accent-navy);
-		font-size: 2em;
+		font-size: 1.8em;
 		letter-spacing: -0.02em;
 		margin-bottom: 0.75em;
 	}
@@ -3476,10 +3473,8 @@ input, select, textarea {
 	}
 
 	#header {
-		background:
-			radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 28%),
-			linear-gradient(180deg, #17314f 0%, #214a70 48%, #2f6fa3 100%);
-		box-shadow: -12px 0 32px rgba(14, 37, 64, 0.16);
+		background: linear-gradient(180deg, #274766 0%, #3f79ad 100%);
+		box-shadow: -8px 0 24px rgba(14, 37, 64, 0.12);
 	}
 
 	#header > nav ul li {
@@ -3492,7 +3487,7 @@ input, select, textarea {
 	}
 
 	#header > nav ul li a.active {
-		background: rgba(255, 255, 255, 0.96);
+		background: rgba(255, 255, 255, 0.98);
 		box-shadow: inset 4px 0 0 var(--accent-primary-strong);
 	}
 
@@ -3509,9 +3504,9 @@ input, select, textarea {
 	}
 
 	.contact-form {
-		background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+		background: #ffffff;
 		border: 1px solid var(--border-soft);
-		border-radius: 18px;
+		border-radius: 12px;
 		box-shadow: var(--shadow-soft);
 		padding: 2em;
 	}
@@ -3545,7 +3540,7 @@ input, select, textarea {
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"] {
-		border-radius: 999px;
+		border-radius: 8px;
 		font-weight: 700;
 		letter-spacing: 0.01em;
 		min-height: 48px;
@@ -3562,7 +3557,7 @@ input, select, textarea {
 	input[type="submit"].primary:hover,
 	input[type="reset"].primary:hover,
 	input[type="button"].primary:hover {
-		background: linear-gradient(180deg, #367cb5 0%, #245d8e 100%);
+		background: linear-gradient(180deg, #4a86bc 0%, #356993 100%);
 	}
 
 	.button.alt {
