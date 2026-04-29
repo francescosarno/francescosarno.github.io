@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Francesco Sarno | Personal</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Personal interests of Francesco Sarno, including travel and football." />
+		<link rel="canonical" href="https://francescosarno.github.io/personal.html" />
+		<meta property="og:title" content="Francesco Sarno | Personal" />
+		<meta property="og:description" content="Travels, sports, and personal interests of Francesco Sarno." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://francescosarno.github.io/personal.html" />
+		<meta property="og:image" content="https://francescosarno.github.io/images/avatar.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	</head>
+	<body class="is-preload page-personal">
+
+		<section id="header">
+			<header>
+				<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+				<h1 id="logo"><a href="index.html">Francesco Sarno</a></h1>
+				<p>Computer Vision and AI R&amp;D Engineer</p>
+			</header>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html" class="nav-back-link">Back to Home</a></li>
+					<li><a href="#one" class="active">Personal</a></li>
+					<li><a href="#travels">Travels</a></li>
+					<li><a href="#sports">Sports</a></li>
+				</ul>
+			</nav>
+			<footer>
+				<ul class="icons">
+					<li><a href="https://www.instagram.com/f_sarno/" target="_blank" rel="noopener noreferrer" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/francescosarno" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://www.linkedin.com/in/francesco-sarno/" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://scholar.google.com/citations?hl=it&user=9UXpbUIAAAAJ" target="_blank" rel="noopener noreferrer" class="fas fa-graduation-cap" aria-label="Google Scholar profile"><span class="label">Google Scholar</span></a></li>
+				</ul>
+			</footer>
+		</section>
+
+		<div id="wrapper">
+			<div id="main">
+				<section id="one">
+					<div class="image main" data-position="top center">
+						<img src="images/personal_wallpaper.png" alt="Personal interests visual" onerror="this.onerror=null;this.src='images/banner.jpg';" />
+					</div>
+					<div class="container">
+						<header class="major">
+							<h2>Personal</h2>
+							<p>Interests outside work</p>
+						</header>
+						<p>Personal interests outside work.</p>
+					</div>
+				</section>
+
+				<section id="travels">
+					<div class="container">
+						<h3>Travels</h3>
+						<div class="travel-map-frame" id="travel-map" aria-label="Travel map"></div>
+						<div class="travel-city-list-block">
+							<div class="page-card travel-country-detail" id="travel-country-detail" hidden>
+								<div class="travel-country-detail-header">
+									<h4 id="travel-country-detail-title"></h4>
+									<button type="button" class="travel-country-close" id="travel-country-close" aria-label="Close country details">X</button>
+								</div>
+								<ul class="travel-city-list" id="travel-country-detail-cities"></ul>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section id="sports">
+					<div class="container">
+						<h3>Sports</h3>
+						<div class="features">
+							<article>
+								<div class="image">
+									<a href="https://matchcenter.fvrz.ch/default.aspx?lng=1&&cxxlnus=1&v=1594&bn=0" target="_blank" rel="noopener noreferrer">
+										<img src="images/italia_zurigo.jpeg" alt="Italia Zurigo" width="220" height="auto" onerror="this.onerror=null;this.src='images/banner.jpg';" />
+									</a>
+								</div>
+								<div class="inner">
+									<h4>Football</h4>
+									<p>I currently play in the Italia Zurigo soccer team.</p>
+								</div>
+							</article>
+							<!--
+							<article>
+								<div class="image">
+									<img src="images/banner.jpg" alt="Padel placeholder" width="220" height="auto" />
+								</div>
+								<div class="inner">
+									<h4>Padel</h4>
+									<p>Coming soon.</p>
+								</div>
+							</article>
+							-->
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<section id="footer">
+				<div class="container">
+					<ul class="copyright">
+						<li>&copy; Francesco Sarno. All rights reserved.</li><li>Design adapted from <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</section>
+		</div>
+
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				var travelLocations = [
+					{ name: "New York", country: "USA", coords: [40.7128, -74.0060], radius: 28000, slug: "new-york" },
+					{ name: "Washington, DC", country: "USA", coords: [38.9072, -77.0369], radius: 22000, slug: "washington-dc" },
+					{ name: "San Francisco", country: "USA", coords: [37.7749, -122.4194], radius: 22000, slug: "san-francisco" },
+					{ name: "San Jose", country: "USA", coords: [37.3382, -121.8863], radius: 18000, slug: "san-jose" },
+					{ name: "Waikoloa", country: "USA", coords: [19.9394, -155.7929], radius: 16000, slug: "waikoloa" },
+					{ name: "London", country: "UK", coords: [51.5072, -0.1276], radius: 32000, slug: "london" },
+					{ name: "Manchester", country: "UK", coords: [53.4808, -2.2426], radius: 22000, slug: "manchester" },
+					{ name: "Liverpool", country: "UK", coords: [53.4084, -2.9916], radius: 18000, slug: "liverpool" },
+					{ name: "Edinburgh", country: "UK", coords: [55.9533, -3.1883], radius: 18000, slug: "edinburgh" },
+					{ name: "Milan", country: "Italy", coords: [45.4642, 9.1900], radius: 24000, slug: "milan" },
+					{ name: "Brescia", country: "Italy", coords: [45.5416, 10.2118], radius: 18000, slug: "brescia" },
+					{ name: "Bergamo", country: "Italy", coords: [45.6983, 9.6773], radius: 16000, slug: "bergamo" },
+					{ name: "Verona", country: "Italy", coords: [45.4384, 10.9916], radius: 18000, slug: "verona" },
+					{ name: "Turin", country: "Italy", coords: [45.0703, 7.6869], radius: 22000, slug: "turin" },
+					{ name: "Trieste", country: "Italy", coords: [45.6495, 13.7768], radius: 18000, slug: "trieste" },
+					{ name: "Venice", country: "Italy", coords: [45.4408, 12.3155], radius: 18000, slug: "venice" },
+					{ name: "Florence", country: "Italy", coords: [43.7696, 11.2558], radius: 18000, slug: "florence" },
+					{ name: "Pisa", country: "Italy", coords: [43.7228, 10.4017], radius: 16000, slug: "pisa" },
+					{ name: "San Gimignano", country: "Italy", coords: [43.4676, 11.0437], radius: 12000, slug: "san-gimignano" },
+					{ name: "Perugia", country: "Italy", coords: [43.1107, 12.3908], radius: 16000, slug: "perugia" },
+					{ name: "Città di Castello", country: "Italy", coords: [43.4560, 12.2402], radius: 12000, slug: "citta-di-castello" },
+					{ name: "Grosseto", country: "Italy", coords: [42.7635, 11.1124], radius: 14000, slug: "grosseto" },
+					{ name: "Rome", country: "Italy", coords: [41.9028, 12.4964], radius: 30000, slug: "rome" },
+					{ name: "Naples", country: "Italy", coords: [40.8518, 14.2681], radius: 22000, slug: "naples" },
+					{ name: "Gallipoli", country: "Italy", coords: [40.0559, 17.9923], radius: 14000, slug: "gallipoli" },
+					{ name: "Cagliari", country: "Italy", coords: [39.2238, 9.1217], radius: 18000, slug: "cagliari" },
+					{ name: "Olbia", country: "Italy", coords: [40.9236, 9.4964], radius: 16000, slug: "olbia" },
+					{ name: "Alghero", country: "Italy", coords: [40.5570, 8.3193], radius: 16000, slug: "alghero" },
+					{ name: "Porto Cervo", country: "Italy", coords: [41.1343, 9.5367], radius: 12000, slug: "porto-cervo" },
+					{ name: "Porto Rotondo", country: "Italy", coords: [41.0258, 9.5476], radius: 12000, slug: "porto-rotondo" },
+					{ name: "Golfo Aranci", country: "Italy", coords: [40.9987, 9.6203], radius: 12000, slug: "golfo-aranci" },
+					{ name: "Porto Torres", country: "Italy", coords: [40.8356, 8.4015], radius: 14000, slug: "porto-torres" },
+					{ name: "San Vito Lo Capo", country: "Italy", coords: [38.1763, 12.7344], radius: 12000, slug: "san-vito-lo-capo" },
+					{ name: "Ragusa", country: "Italy", coords: [36.9269, 14.7255], radius: 14000, slug: "ragusa" },
+					{ name: "Macerata", country: "Italy", coords: [43.2984, 13.4535], radius: 14000, slug: "macerata" },
+					{ name: "Athens", country: "Greece", coords: [37.9838, 23.7275], radius: 26000, slug: "athens" },
+					{ name: "Crete", country: "Greece", coords: [35.2401, 24.8093], radius: 30000, slug: "crete" },
+					{ name: "Sofia", country: "Bulgaria", coords: [42.6977, 23.3219], radius: 22000, slug: "sofia" },
+					{ name: "Pleven", country: "Bulgaria", coords: [43.4170, 24.6067], radius: 14000, slug: "pleven" },
+					{ name: "Prague", country: "Czech Republic", coords: [50.0755, 14.4378], radius: 22000, slug: "prague" },
+					{ name: "Valletta", country: "Malta", coords: [35.8989, 14.5146], radius: 10000, slug: "valletta" },
+					{ name: "St. Julian's", country: "Malta", coords: [35.9196, 14.4894], radius: 9000, slug: "st-julians" },
+					{ name: "Barcelona", country: "Spain", coords: [41.3851, 2.1734], radius: 26000, slug: "barcelona" },
+					{ name: "Valencia", country: "Spain", coords: [39.4699, -0.3763], radius: 22000, slug: "valencia" },
+					{ name: "Lisbon", country: "Portugal", coords: [38.7223, -9.1393], radius: 24000, slug: "lisbon" },
+					{ name: "Madeira", country: "Portugal", coords: [32.7607, -16.9595], radius: 22000, slug: "madeira" },
+					{ name: "Lyon", country: "France", coords: [45.7640, 4.8357], radius: 22000, slug: "lyon" },
+					{ name: "Bordeaux", country: "France", coords: [44.8378, -0.5792], radius: 18000, slug: "bordeaux" },
+					{ name: "Amsterdam", country: "Netherlands", coords: [52.3676, 4.9041], radius: 22000, slug: "amsterdam" },
+					{ name: "Eindhoven", country: "Netherlands", coords: [51.4416, 5.4697], radius: 16000, slug: "eindhoven" },
+					{ name: "Gdansk", country: "Poland", coords: [54.3520, 18.6466], radius: 18000, slug: "gdansk" },
+					{ name: "Lofoten", country: "Norway", coords: [68.1467, 13.6115], radius: 30000, slug: "lofoten" },
+					{ name: "Tromso", country: "Norway", coords: [69.6492, 18.9553], radius: 18000, slug: "tromso" },
+					{ name: "Bern", country: "Switzerland", coords: [46.9480, 7.4474], radius: 16000, slug: "bern" },
+					{ name: "Zurich", country: "Switzerland", coords: [47.3769, 8.5417], radius: 22000, slug: "zurich" },
+					{ name: "Biel/Bienne", country: "Switzerland", coords: [47.1368, 7.2468], radius: 14000, slug: "biel-bienne" },
+					{ name: "Lausanne", country: "Switzerland", coords: [46.5197, 6.6323], radius: 18000, slug: "lausanne" },
+					{ name: "Fribourg", country: "Switzerland", coords: [46.8065, 7.1619], radius: 14000, slug: "fribourg" },
+					{ name: "Geneva", country: "Switzerland", coords: [46.2044, 6.1432], radius: 22000, slug: "geneva" },
+					{ name: "Frankfurt", country: "Germany", coords: [50.1109, 8.6821], radius: 22000, slug: "frankfurt" },
+					{ name: "Mainz", country: "Germany", coords: [49.9929, 8.2473], radius: 16000, slug: "mainz" },
+					{ name: "Munich", country: "Germany", coords: [48.1351, 11.5820], radius: 24000, slug: "munich" },
+					{ name: "Stuttgart", country: "Germany", coords: [48.7758, 9.1829], radius: 18000, slug: "stuttgart" },
+					{ name: "Istanbul", country: "Turkey", coords: [41.0082, 28.9784], radius: 32000, slug: "istanbul" }
+				];
+
+				var map = L.map("travel-map", {
+					scrollWheelZoom: true,
+					zoomControl: true
+				}).setView([20, 0], 2);
+
+				L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+					maxZoom: 19,
+					minZoom: 2,
+					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+				}).addTo(map);
+
+				var bounds = [];
+				var detailCard = document.getElementById("travel-country-detail");
+				var detailTitle = document.getElementById("travel-country-detail-title");
+				var detailCities = document.getElementById("travel-country-detail-cities");
+				var closeButton = document.getElementById("travel-country-close");
+				var mapFrame = document.getElementById("travel-map");
+				var markerLayer = L.layerGroup().addTo(map);
+				var countryCenters = {};
+				var countryAreas = {};
+				var countryGeoJsonLayer = null;
+				var countryColors = {
+					"USA": { primary: "#4f86c6", fill: "#a9c6e8" },
+					"UK": { primary: "#6c63c9", fill: "#c4c0ef" },
+					"Italy": { primary: "#2f9e44", fill: "#a9dfb5" },
+					"Greece": { primary: "#1f7a8c", fill: "#9fd3dc" },
+					"Bulgaria": { primary: "#c77d1f", fill: "#ebc595" },
+					"Czech Republic": { primary: "#b24c63", fill: "#e7b2bf" },
+					"Malta": { primary: "#d94841", fill: "#f0b0ab" },
+					"Spain": { primary: "#d17b0f", fill: "#efc48d" },
+					"Portugal": { primary: "#8a5a44", fill: "#d7baac" },
+					"France": { primary: "#3a86ff", fill: "#b4d0ff" },
+					"Netherlands": { primary: "#ff7f11", fill: "#ffd0a0" },
+					"Poland": { primary: "#c9184a", fill: "#efadc1" },
+					"Norway": { primary: "#4361ee", fill: "#b8c4fb" },
+					"Switzerland": { primary: "#e5383b", fill: "#f4aeb0" },
+					"Germany": { primary: "#495057", fill: "#c7ccd1" },
+					"Turkey": { primary: "#9d4edd", fill: "#d9b8f6" }
+				};
+				var countryNameMap = {
+					"USA": "United States of America",
+					"UK": "United Kingdom",
+					"Czech Republic": "Czech Republic",
+					"Turkey": "Turkey"
+				};
+
+				travelLocations.forEach(function (location) {
+					bounds.push(location.coords);
+
+					if (!countryCenters[location.country]) {
+						countryCenters[location.country] = [];
+					}
+
+					countryCenters[location.country].push(location.coords);
+					var colorSet = countryColors[location.country] || { primary: "#2f618e", fill: "#8fb6d8" };
+
+					var cityPage = "city.html?city=" + encodeURIComponent(location.slug);
+					var area = L.circleMarker(location.coords, {
+						radius: 7,
+						color: colorSet.primary,
+						weight: 2,
+						fillColor: colorSet.fill,
+						fillOpacity: 0.9
+					});
+
+					area.bindTooltip(location.name, {
+						direction: "top",
+						offset: [0, -8]
+					});
+
+					area.on("click", function () {
+						window.location.href = cityPage;
+					});
+
+					if (!countryAreas[location.country]) {
+						countryAreas[location.country] = [];
+					}
+
+					countryAreas[location.country].push(area);
+				});
+
+				if (bounds.length) {
+					map.fitBounds(bounds, { padding: [30, 30] });
+				}
+
+				function resetCountryStyles() {
+					if (!countryGeoJsonLayer) {
+						return;
+					}
+
+					countryGeoJsonLayer.eachLayer(function (layer) {
+						var layerInternalCountry = Object.keys(countryNameMap).find(function (key) {
+							return countryNameMap[key] === layer.feature.properties.name;
+						}) || layer.feature.properties.name;
+						var layerColorSet = countryColors[layerInternalCountry] || { primary: "#2f618e", fill: "#8fb6d8" };
+						var isVisited = visitedCountries.has(layer.feature.properties.name);
+						layer.setStyle({
+							color: isVisited ? layerColorSet.primary : "#cfd9e4",
+							weight: isVisited ? 1.2 : 0.7,
+							fillColor: isVisited ? layerColorSet.fill : "#f5f8fc",
+							fillOpacity: isVisited ? 0.55 : 0.18
+						});
+					});
+				}
+
+				function openCountryDetail(country) {
+					if (!groupedLocations[country]) {
+						return;
+					}
+
+					markerLayer.clearLayers();
+					detailCard.hidden = false;
+					detailTitle.textContent = country;
+					detailCities.innerHTML = "";
+					mapFrame.classList.add("travel-map-frame-expanded");
+
+					countryAreas[country].forEach(function (area) {
+						area.addTo(markerLayer);
+					});
+
+					groupedLocations[country].forEach(function (city) {
+						var item = document.createElement("li");
+						var link = document.createElement("a");
+						link.href = "city.html?city=" + encodeURIComponent(city.slug);
+						link.textContent = city.name;
+						item.appendChild(link);
+						detailCities.appendChild(item);
+					});
+
+					var localBounds = L.latLngBounds(countryCenters[country]);
+					map.fitBounds(localBounds, { padding: [40, 40], maxZoom: 6 });
+
+					if (countryGeoJsonLayer) {
+						var targetName = countryNameMap[country] || country;
+						countryGeoJsonLayer.eachLayer(function (layer) {
+							var layerInternalCountry = Object.keys(countryNameMap).find(function (key) {
+								return countryNameMap[key] === layer.feature.properties.name;
+							}) || layer.feature.properties.name;
+							var layerColorSet = countryColors[layerInternalCountry] || { primary: "#2f618e", fill: "#8fb6d8" };
+							var isTarget = layer.feature && layer.feature.properties && layer.feature.properties.name === targetName;
+							var isVisited = visitedCountries.has(layer.feature.properties.name);
+							layer.setStyle({
+								color: isTarget ? "#17314f" : (isVisited ? layerColorSet.primary : "#cfd9e4"),
+								weight: isTarget ? 2 : (isVisited ? 1.2 : 0.7),
+								fillColor: isTarget ? layerColorSet.primary : (isVisited ? layerColorSet.fill : "#f5f8fc"),
+								fillOpacity: isTarget ? 0.72 : (isVisited ? 0.55 : 0.18)
+							});
+						});
+					}
+				}
+
+				function closeCountryDetail() {
+					detailCard.hidden = true;
+					detailTitle.textContent = "";
+					detailCities.innerHTML = "";
+					mapFrame.classList.remove("travel-map-frame-expanded");
+					markerLayer.clearLayers();
+					if (bounds.length) {
+						map.fitBounds(bounds, { padding: [30, 30] });
+					}
+					resetCountryStyles();
+				}
+
+				var visitedCountries = new Set(
+					travelLocations.map(function (location) {
+						return countryNameMap[location.country] || location.country;
+					})
+				);
+
+				fetch("https://cdn.jsdelivr.net/gh/johan/world.geo.json@master/countries.geo.json")
+					.then(function (response) {
+						return response.json();
+					})
+					.then(function (data) {
+						countryGeoJsonLayer = L.geoJSON(data, {
+							style: function (feature) {
+								var visited = visitedCountries.has(feature.properties.name);
+								var internalCountry = Object.keys(countryNameMap).find(function (key) {
+									return countryNameMap[key] === feature.properties.name;
+								}) || feature.properties.name;
+								var colorSet = countryColors[internalCountry] || { primary: "#2f618e", fill: "#8fb6d8" };
+								return {
+									color: visited ? colorSet.primary : "#cfd9e4",
+									weight: visited ? 1.2 : 0.7,
+									fillColor: visited ? colorSet.fill : "#f5f8fc",
+									fillOpacity: visited ? 0.55 : 0.18
+								};
+							},
+							onEachFeature: function (feature, layer) {
+								if (!visitedCountries.has(feature.properties.name)) {
+									return;
+								}
+
+								layer.on("click", function () {
+									var internalCountry = Object.keys(countryNameMap).find(function (key) {
+										return countryNameMap[key] === feature.properties.name;
+									}) || feature.properties.name;
+									openCountryDetail(internalCountry);
+								});
+							}
+						}).addTo(map);
+					})
+					.catch(function () {
+						// If the country layer cannot be loaded, the city markers on click still work.
+					});
+
+				var groupedLocations = {};
+
+				travelLocations.forEach(function (location) {
+					var country = location.country || "Other";
+					var city = location.name;
+
+					if (!groupedLocations[country]) {
+						groupedLocations[country] = [];
+					}
+
+					groupedLocations[country].push(location);
+				});
+
+				closeButton.addEventListener("click", closeCountryDetail);
+			});
+		</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
