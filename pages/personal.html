@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Francesco Sarno | Personal</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Personal interests of Francesco Sarno, including travel and football." />
+		<link rel="canonical" href="https://francescosarno.github.io/pages/personal.html" />
+		<meta property="og:title" content="Francesco Sarno | Personal" />
+		<meta property="og:description" content="Travels, sports, and personal interests of Francesco Sarno." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://francescosarno.github.io/pages/personal.html" />
+		<meta property="og:image" content="https://francescosarno.github.io/images/avatar.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	</head>
+	<body class="is-preload page-personal">
+
+		<section id="header">
+			<header>
+				<span class="image avatar"><img src="../images/avatar.jpg" alt="" /></span>
+				<h1 id="logo"><a href="../index.html">Francesco Sarno</a></h1>
+				<p>Computer Vision and AI R&amp;D Engineer</p>
+			</header>
+			<nav id="nav">
+				<ul>
+					<li><a href="../index.html" class="nav-back-link">Back to Home</a></li>
+					<li><a href="#one" class="active">Personal</a></li>
+					<li><a href="#travels">Travels</a></li>
+					<li><a href="#sports">Sports</a></li>
+				</ul>
+			</nav>
+			<footer>
+				<ul class="icons">
+					<li><a href="https://www.instagram.com/f_sarno/" target="_blank" rel="noopener noreferrer" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/francescosarno" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://www.linkedin.com/in/francesco-sarno/" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://scholar.google.com/citations?hl=it&user=9UXpbUIAAAAJ" target="_blank" rel="noopener noreferrer" class="fas fa-graduation-cap" aria-label="Google Scholar profile"><span class="label">Google Scholar</span></a></li>
+				</ul>
+			</footer>
+		</section>
+
+		<div id="wrapper">
+			<div id="main">
+				<section id="one">
+					<div class="image main" data-position="top center">
+						<img src="../images/personal_wallpaper.png" alt="Personal interests visual" onerror="this.onerror=null;this.src='../images/banner.jpg';" />
+					</div>
+					<div class="container">
+						<header class="major">
+							<h2>Personal</h2>
+							<p>Interests outside work</p>
+						</header>
+						<p>Personal interests outside work.</p>
+					</div>
+				</section>
+
+				<section id="travels">
+					<div class="container">
+						<h3>Travels</h3>
+						<div class="travel-map-frame" id="travel-map" aria-label="Travel map"></div>
+						<div class="travel-city-list-block">
+							<div class="page-card travel-country-detail" id="travel-country-detail" hidden>
+								<div class="travel-country-detail-header">
+									<h4 id="travel-country-detail-title"></h4>
+									<button type="button" class="travel-country-close" id="travel-country-close" aria-label="Close country details">X</button>
+								</div>
+								<ul class="travel-city-list" id="travel-country-detail-cities"></ul>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section id="sports">
+					<div class="container">
+						<h3>Sports</h3>
+						<div class="features">
+							<article>
+								<div class="image">
+									<a href="https://matchcenter.fvrz.ch/default.aspx?lng=1&&cxxlnus=1&v=1594&bn=0" target="_blank" rel="noopener noreferrer">
+										<img src="../images/italia_zurigo.jpeg" alt="Italia Zurigo" width="220" height="auto" onerror="this.onerror=null;this.src='../images/banner.jpg';" />
+									</a>
+								</div>
+								<div class="inner">
+									<h4>Football</h4>
+									<p>I currently play in the Italia Zurigo soccer team.</p>
+								</div>
+							</article>
+							<!--
+							<article>
+								<div class="image">
+									<img src="../images/banner.jpg" alt="Padel placeholder" width="220" height="auto" />
+								</div>
+								<div class="inner">
+									<h4>Padel</h4>
+									<p>Coming soon.</p>
+								</div>
+							</article>
+							-->
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<section id="footer">
+				<div class="container">
+					<ul class="copyright">
+						<li>&copy; Francesco Sarno. All rights reserved.</li><li>Design adapted from <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</section>
+		</div>
+
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+		<script src="../assets/js/data/travel-data.js"></script>
+		<script src="../assets/js/personal-page.js"></script>
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.scrollex.min.js"></script>
+		<script src="../assets/js/jquery.scrolly.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+	</body>
+</html>
